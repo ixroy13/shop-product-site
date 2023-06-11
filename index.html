@@ -1,0 +1,165 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="icon" type="image/png" sizes="32x32" href="./images/favicon-32x32.png">  
+  <title>E-commerce product page | Frontend Mentor</title>
+  <link rel="stylesheet" href="style.css">
+  <script src="app.js" defer></script>
+</head>
+<body>
+
+  <header>
+
+    <nav>
+
+      <div class="left">
+  
+        <div class="menu-btn">
+          <a href="#"><img src="images/icon-menu.svg" alt="switch menu">
+          </a>
+        </div>
+  
+        <div class="logo">
+          <a href="#">
+            <img src="images/logo.svg" alt="sneakers logo">
+          </a>
+        </div>
+  
+        <div class="menu">
+          <ul>
+            <li><a href="#">Collections</a></li>
+            <li><a href="#">Men</a></li>
+            <li><a href="#">Women</a></li>
+            <li><a href="#">About</a></li>
+            <li><a href="#">Contact</a></li>
+          </ul>
+        </div>
+  
+      </div>
+  
+      <div class="right">
+  
+        <div class="cart-btn">
+          <a href="#"><svg width="22" height="20" xmlns="http://www.w3.org/2000/svg"><path d="M20.925 3.641H3.863L3.61.816A.896.896 0 0 0 2.717 0H.897a.896.896 0 1 0 0 1.792h1l1.031 11.483c.073.828.52 1.726 1.291 2.336C2.83 17.385 4.099 20 6.359 20c1.875 0 3.197-1.87 2.554-3.642h4.905c-.642 1.77.677 3.642 2.555 3.642a2.72 2.72 0 0 0 2.717-2.717 2.72 2.72 0 0 0-2.717-2.717H6.365c-.681 0-1.274-.41-1.53-1.009l14.321-.842a.896.896 0 0 0 .817-.677l1.821-7.283a.897.897 0 0 0-.87-1.114ZM6.358 18.208a.926.926 0 0 1 0-1.85.926.926 0 0 1 0 1.85Zm10.015 0a.926.926 0 0 1 0-1.85.926.926 0 0 1 0 1.85Zm2.021-7.243-13.8.81-.57-6.341h15.753l-1.383 5.53Z" fill="#69707D" fill-rule="nonzero"/></svg>
+          </a>
+        </div>
+  
+        <div class="profile-btn">
+          <a href="#">
+            <img class="profile-picture" src="images/image-avatar.png" alt="user avatar"></a>
+        </div>
+  
+      </div>
+
+      <div class="cart-items">
+        <h2>Cart</h2>
+        <div class="all-items">
+          <p>Your cart is empty.</p>
+        </div>
+      </div>
+  
+    </nav>
+
+  </header>
+
+  <main>
+
+    <div class="photos">
+
+      <div class="main-photo">
+        
+        <div class="btn-layer">
+
+          <button class="previous-photo"><svg width="12" height="18" xmlns="http://www.w3.org/2000/svg"><path d="M11 1 3 9l8 8" stroke="#1D2026" stroke-width="3"     fill="none" fill-rule="evenodd"/></svg>
+          </button>
+
+          <button class="next-photo"><svg width="13" height="18" xmlns="http://www.w3.org/2000/svg"><path d="m2 1 8 8-8 8" stroke="#1D2026" stroke-width="3" fill="none" fill-rule="evenodd"/></svg>
+          </button>
+
+        </div>
+
+        <img class="main-active-photo" src="images/image-product-1.jpg" alt="Product picture">
+
+      </div>
+
+      <div class="photo-list">
+
+      <div class="first-photo photo-btn active-photo">
+        <img src="images/image-product-1-thumbnail.jpg" alt="First photo">
+      </div>
+
+      <div class="second-photo photo-btn">
+        <img src="images/image-product-2-thumbnail.jpg" alt="Second photo">
+      </div>
+
+      <div class="third-photo photo-btn">
+        <img src="images/image-product-3-thumbnail.jpg" alt="Third photo">
+      </div>
+
+      <div class="fourth-photo photo-btn">
+        <img src="images/image-product-4-thumbnail.jpg" alt="Fourth photo">
+      </div>
+
+    </div>
+
+  </div>
+
+    <div class="buy">
+
+      <h3>  Sneaker Company</h3>
+
+      <h1>Fall Limited Edition Sneakers</h1>
+
+      <p>These low-profile sneakers are your perfect casual wear companion. Featuring a 
+        durable rubber outer sole, they’ll withstand everything the weather can offer.</p>
+
+        <div class="price">
+
+          <h2>$125.00</h2>
+
+          <p>50%</p>
+
+        </div>
+
+        <p class="old-price">$250.00</p>
+
+        <div class="buttons">
+
+          <div class="amount">
+
+              <button onclick="removeItem()">
+                <img src="images/icon-minus.svg" alt="Remove item">
+              </button>
+
+              <div class="amount-number">
+                <p>0</p>
+              </div>
+
+              <button onclick="addItem()">
+                <img src="images/icon-plus.svg" alt="Add item">
+              </button>
+
+          </div>
+
+          <button class="add-to-cart">
+
+              <div class="cart-icon">
+
+                <svg width="22" height="20" xmlns="http://www.w3.org/2000/svg"><path d="M20.925 3.641H3.863L3.61.816A.896.896 0 0 0 2.717 0H.897a.896.896 0 1 0 0 1.792h1l1.031 11.483c.073.828.52 1.726 1.291 2.336C2.83 17.385 4.099 20 6.359 20c1.875 0 3.197-1.87 2.554-3.642h4.905c-.642 1.77.677 3.642 2.555 3.642a2.72 2.72 0 0 0 2.717-2.717 2.72 2.72 0 0 0-2.717-2.717H6.365c-.681 0-1.274-.41-1.53-1.009l14.321-.842a.896.896 0 0 0 .817-.677l1.821-7.283a.897.897 0 0 0-.87-1.114ZM6.358 18.208a.926.926 0 0 1 0-1.85.926.926 0 0 1 0 1.85Zm10.015 0a.926.926 0 0 1 0-1.85.926.926 0 0 1 0 1.85Zm2.021-7.243-13.8.81-.57-6.341h15.753l-1.383 5.53Z" fill="#fff" fill-rule="nonzero"/></svg>
+
+              </div>  
+
+                <p>Add to cart</p>
+                
+          </button>
+
+        </div> 
+
+    </div>
+
+  </main>  
+
+</body>
+</html>
