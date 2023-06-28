@@ -8,6 +8,17 @@ const nextBtn = document.querySelector(".next-photo")
 const cartBtn = document.querySelector(".cart-btn")
 const cartItems = document.querySelector(".cart-items")
 
+const menuBtn = document.querySelector(".menu-btn")
+const closeMenuBtn = document.querySelector(".close-btn")
+
+const addToCart = document.querySelector(".add-to-cart")
+const cartItemsShortcut = document.querySelector(".cart-btn span")
+
+const emptyCartDiv = document.querySelector(".all-items")
+const fullCartDiv = document.querySelector(".all-items-full")
+const secondItemSpan = document.querySelector(".number-of-items-in-cart")
+const totalCost = document.querySelector(".total-cost")
+
 // ITEAM ADD/REMOVE
 
 let howManyItems = 0;
@@ -94,3 +105,51 @@ nextBtn.addEventListener("click", () => {
 cartBtn.addEventListener("click", () => {
     cartItems.classList.toggle("cart-open")
 })
+
+// MENU SWITCH
+
+menuBtn.addEventListener("click", () => {
+    menuBtn.classList.add("active")
+})
+
+closeMenuBtn.addEventListener("click", () => {
+    menuBtn.classList.remove("active")
+})
+
+//  ADD TO CART
+
+fullCartDiv.style.display = "none"
+
+let itemsInCart = 0;
+totalCost.innerText = `$${0.}.00`
+addToCart.addEventListener("click", () => {
+    
+    itemsInCart += Number(itemAmonut.innerText);
+    cartItemsShortcut.innerText = itemsInCart;
+    itemAmonut.innerText = 0;
+    howManyItems = 0;
+    if (itemsInCart != 0) {
+        cartItemsShortcut.style.visibility = "visible"
+    }
+
+    if (itemsInCart === 0) {
+        emptyCartDiv.style.display = "flex";
+        fullCartDiv.style.display = "none"
+    } else {
+        emptyCartDiv.style.display = "none"
+        fullCartDiv.style.display = "flex"
+    }
+
+    secondItemSpan.innerText = itemsInCart
+    totalCost.innerText =  `$${(125 * itemsInCart).toFixed(2)}`
+
+})
+
+document.querySelector(".cart-trash").onclick = () => {
+    itemsInCart = 0;
+    cartItemsShortcut.style.visibility = "hidden"
+    secondItemSpan.innerText = itemsInCart;
+    totalCost.innerText = `$${0.}.00`
+    emptyCartDiv.style.display = "flex";
+    fullCartDiv.style.display = "none"
+}
