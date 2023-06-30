@@ -7,6 +7,7 @@
   <title>E-commerce product page | Frontend Mentor</title>
   <link rel="stylesheet" href="style.css">
   <script src="app.js" defer></script>
+  <script src="nav.js" defer></script>
 </head>
 <body>
 
@@ -16,10 +17,9 @@
 
       <div class="left">
   
-        <div class="menu-btn">
-          <a href="#"><img src="images/icon-menu.svg" alt="switch menu">
-          </a>
-        </div>
+        <button class="menu-btn mobile-nav-toggle" aria-controls="primary-navigation" aria-expanded="false">
+        <span class="sr-only">Menu</span>
+        </button>
   
         <div class="logo">
           <a href="#">
@@ -28,8 +28,7 @@
         </div>
   
           
-          <ul class="list">
-            <li><a href="#"><svg class="close-btn menu-btn" width="14" height="15" xmlns="http://www.w3.org/2000/svg"><path d="m11.596.782 2.122 2.122L9.12 7.499l4.597 4.597-2.122 2.122L7 9.62l-4.595 4.597-2.122-2.122L4.878 7.5.282 2.904 2.404.782l4.595 4.596L11.596.782Z" fill="#69707D" fill-rule="evenodd"/></svg></a></li>
+          <ul id="primary-navigation" class="primary-navigation list" data-visble="false">
             <li><a href="#">Collections</a></li>
             <li><a href="#">Men</a></li>
             <li><a href="#">Women</a></li>

@@ -8,9 +8,6 @@ const nextBtn = document.querySelector(".next-photo")
 const cartBtn = document.querySelector(".cart-btn")
 const cartItems = document.querySelector(".cart-items")
 
-const menuBtn = document.querySelector(".menu-btn")
-const closeMenuBtn = document.querySelector(".close-btn")
-
 const addToCart = document.querySelector(".add-to-cart")
 const cartItemsShortcut = document.querySelector(".cart-btn span")
 
@@ -18,6 +15,23 @@ const emptyCartDiv = document.querySelector(".all-items")
 const fullCartDiv = document.querySelector(".all-items-full")
 const secondItemSpan = document.querySelector(".number-of-items-in-cart")
 const totalCost = document.querySelector(".total-cost")
+
+const nav = document.querySelector("#primary-navigation")
+const navToggle = document.querySelector(".menu-btn")
+
+navToggle.addEventListener("click", () => {
+    const visibility = nav.getAttribute('data-visble')
+
+    document.body.classList.toggle("fixed-position")
+
+    if (visibility === "false") {
+        nav.setAttribute("data-visble", true)
+        navToggle.setAttribute("aria-expanded", true)
+    } else if (visibility === "true") {
+        nav.setAttribute("data-visble", false)
+        navToggle.setAttribute("aria-expanded", false)
+    }
+})
 
 // ITEAM ADD/REMOVE
 
@@ -104,16 +118,6 @@ nextBtn.addEventListener("click", () => {
 
 cartBtn.addEventListener("click", () => {
     cartItems.classList.toggle("cart-open")
-})
-
-// MENU SWITCH
-
-menuBtn.addEventListener("click", () => {
-    menuBtn.classList.add("active")
-})
-
-closeMenuBtn.addEventListener("click", () => {
-    menuBtn.classList.remove("active")
 })
 
 //  ADD TO CART
