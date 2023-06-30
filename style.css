@@ -25,6 +25,15 @@ body {
     overflow: hidden;
 }
 
+.open-menu-layer.black-layer {
+    position: absolute;
+    inset: 0 ;
+    width: 100%;
+    height: calc(100% + 10rem);
+    background: rgba(0, 0, 0, .5);
+    z-index: 900;
+}
+
 a {
     text-decoration: none;
     color: var(--Black);
@@ -38,7 +47,7 @@ a {
     margin: -1px; 
     overflow: hidden;
     clip: rect(0, 0, 0, 0);
-    white-space: nowrap; /* added line */
+    white-space: nowrap;
     border: 0;
 } 
 
@@ -86,7 +95,6 @@ nav {
 
 .cart-btn span {
     visibility: hidden;
-    /* display: block; */
     position: absolute;
     translate: .5rem -.3rem;
     background: var(--Orange);
@@ -110,7 +118,7 @@ nav {
     height: 0rem;
     background: var(--White);
     border-radius: 0.7rem;
-    z-index: 999;
+    z-index: 100;
     transition: .3s;
     visibility: hidden;
     box-shadow: 0px 4px 24px 0px rgba(0, 0, 0, 1);
@@ -132,7 +140,7 @@ nav {
 }
 
 .cart-photo img {
-    width: 100%;
+    height: 3.5rem;
     border-radius: .4rem;
 }
 
@@ -169,6 +177,8 @@ nav {
     margin-top: 1rem;
     padding: 1rem;
     border-radius: .5rem;
+    font-size: .9rem;
+    cursor: pointer;
 }
 
 .cart-items * {
@@ -180,12 +190,8 @@ nav {
 }
 
 .cart-items.cart-open {
-    height: fit-content;
-    visibility: visible;
-}
-
-.cart-items.cart-items.cart-open {
     height: 15rem;
+    visibility: visible;
     overflow: hidden;
 }
 
@@ -381,12 +387,12 @@ nav {
         position: fixed;
         inset: 0 40% 0 0;
         overflow: hidden;
-        transition: .3s ease-out;
+        transition: .2s ease-out;
         display: flex;
         flex-direction: column;
         row-gap: 1.5rem;
         background: var(--White);
-        z-index: 1;
+        z-index: 1000;
         padding: 6rem 1.5rem 0;
         translate: -100% 0;
     } 
@@ -528,10 +534,10 @@ nav {
         width: 20rem;
     }
 
-    .cart-items.cart-items.cart-open {
+    /* .cart-items.cart-items.cart-open {
         height: 15rem;
         overflow: hidden;
-    }
+    } */
 
     .profile-picture {
         height: 3rem;
@@ -597,18 +603,6 @@ nav {
         column-gap: 1rem;
     }
 
-    /* ANIMATIONS */
-
-    .list a::after {
-        display: block;
-        content: "";
-        width: 0%;
-        transition: .3s;
-        height: 4px;
-        background: var(--Orange);
-        translate: 0 2.9rem;
-    }
-
 }
 
 @media (min-width: 1000px) {
@@ -636,6 +630,26 @@ nav {
         padding: 0 15rem;
     }
 
+    /* ANIMATIONS */
+
+    .list a::after {
+        display: block;
+        content: "";
+        width: 0%;
+        transition: .3s;
+        height: 4px;
+        background: var(--Orange);
+        translate: 0 2.9rem;
+    }
+
+    .amount button:hover {
+        filter: opacity(0.5);
+    }
+    
+    .add-to-cart:hover {
+        filter: opacity(0.7);
+    }
+
 }
 
 /* ACTIVE STAGES */
@@ -654,14 +668,6 @@ nav {
 }
 
 .photo-btn:not(.active-photo):hover {
-    filter: opacity(0.7);
-}
-
-.amount button:hover {
-    filter: opacity(0.5);
-}
-
-.add-to-cart:hover {
     filter: opacity(0.7);
 }
 

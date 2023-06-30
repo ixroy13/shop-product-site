@@ -23,6 +23,7 @@ navToggle.addEventListener("click", () => {
     const visibility = nav.getAttribute('data-visble')
 
     document.body.classList.toggle("fixed-position")
+    document.querySelector(".open-menu-layer").classList.toggle("black-layer")
 
     if (visibility === "false") {
         nav.setAttribute("data-visble", true)
