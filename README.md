@@ -20,7 +20,7 @@ The product page in the Simulated Store is built using the following technologie
 To make use of the add and remove from cart functionality, you can visit the product page in the Simulated Store. To run the page, clone this repository to your local machine:
 
 ```bash
-git clone https://github.com/your-username/simulated-store.git
+git clone https://github.com/ixroy13/simulated-store.git
 ```
 
 Open the `index.html` file in your web browser. On the product page, you will be able to add and remove products from the cart, explore their details, and continue the purchasing process.
